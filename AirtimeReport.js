@@ -41,16 +41,17 @@ module.exports = function airtimeReport() {
         return totalReport.toFixed(2);
     }
     
-    // function filter(cost){
-    //     var airtimeList = [];
-    //     for(var i = 0; i< cost.length; i++){
-    //         var currentList =  cost[i];
-    //         if(currentList[i] =="calls"){
-    //             airtimeList.push(currentList)
-    //         }
-    //     }
-    //     return airtimeList;
-    // }
+    function generate(length){
+        
+        var inputStr = "Airtime report -> 4 sms's, 3 calls & 2mb of data. Total cost: 27.55" 
+        var characters = inputStr.length;
+
+        for(var i = 0; i<length; i++){
+            
+            inputStr += characters.charAt(Math.floor(Math.random()*characters.length))
+        }
+        return inputStr;
+    }
 
 
 
@@ -61,7 +62,7 @@ module.exports = function airtimeReport() {
         keepSmsReport,
         keepDataReport,
         keepTotalReport,
-        // filter
+         generate
     }
 
 }

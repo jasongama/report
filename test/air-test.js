@@ -40,6 +40,14 @@ describe('airtimeReport',  function () {
     
   
     });
-   
+    it("It should generate this string", function () {
+        var input = airtimeReport()
+
+        input.addAirtime("sms,sms,1mb,call,call,1mb,sms,call,sms");
+        var report = input.generate();
+        assert.equal("Airtime report -> 4 sms's, 3 calls & 2mb of data. Total cost: 27.55", report);
+    
+  
+    });
 });
 
